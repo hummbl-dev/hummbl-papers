@@ -3,6 +3,8 @@
 Portfolio status, pre-registered backlog, and active work.
 
 > **DOI strategy:** Each paper gets its own Zenodo deposit (Pattern A). The GitHub→Zenodo webhook on this repo is reserved for future code/data releases only. See [docs/method/doi-strategy.md](docs/method/doi-strategy.md).
+>
+> **Drafting vs publishing:** Papers are drafted privately in founder-mode, then copied to `papers/{slug}/` at publication. Post-publication edits happen in hummbl-papers only. See [docs/method/drafting-to-publishing-convention.md](docs/method/drafting-to-publishing-convention.md).
 
 ## Legend
 
