@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you reference this research portfolio, please cite it as below."
+title: "HUMMBL Papers — Governance Infrastructure Research Portfolio"
+abstract: >
+  Research portfolio for the HUMMBL governance infrastructure program.
+  Papers target a unified thesis: governed AI infrastructure decomposes
+  into a small set of composable primitives spanning auditability,
+  delegation, coordination, identity, safety, behavior, and measurement.
+type: dataset
+authors:
+  - family-names: Bowlby
+    given-names: Reuben
+    orcid: "https://orcid.org/0009-0002-5620-1103"
+    email: reuben@hummbl.io
+    affiliation: HUMMBL
+repository-code: "https://github.com/hummbl-research/hummbl-papers"
+url: "https://github.com/hummbl-research/hummbl-papers"
+license: MIT
+version: 0.1.0
+date-released: "2026-04-16"
+keywords:
+  - AI governance
+  - delegation
+  - auditability
+  - coordination
+  - safety
+  - research infrastructure
+  - reproducibility

@@ -1,0 +1,56 @@
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# LaTeX build output
+build/
+*.pdf.tmp
+
+# Editor files
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Temporary files
+*.bak
+*.sav
+*.tmp
+
+# OS-generated
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Cross-repo isolation — founder-mode infrastructure must not bleed into this repo
+founder_mode/
+_state/
+_internal/

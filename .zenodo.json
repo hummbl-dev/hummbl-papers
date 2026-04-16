@@ -1,0 +1,31 @@
+{
+  "title": "HUMMBL Papers — Governance Infrastructure Research Portfolio",
+  "description": "Research portfolio for the HUMMBL governance infrastructure program. Papers target a unified thesis: governed AI infrastructure decomposes into a small set of composable primitives spanning auditability (VERUM, TRACE), delegation (DCT, DELEGATION_DEPTH), coordination (COORDINATION_BUS), identity (AGENTIC_IDENTITY), safety (KILL_SWITCH), behavior (COMPLIANCE_THEATER, BKI), and measurement (BASE120).",
+  "creators": [
+    {
+      "name": "Bowlby, Reuben",
+      "orcid": "0009-0002-5620-1103",
+      "affiliation": "HUMMBL"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "AI governance",
+    "delegation",
+    "auditability",
+    "coordination",
+    "safety",
+    "research infrastructure",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "scheme": "url",
+      "identifier": "https://github.com/hummbl-research/hummbl-papers",
+      "relation": "isSupplementTo"
+    }
+  ],
+  "access_right": "open",
+  "upload_type": "publication",
+  "publication_type": "preprint"
+}
