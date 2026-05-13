@@ -35,6 +35,12 @@ For ongoing papers that are pre-print only, see the paper's own `papers/<name>/R
 
 This repository is maintained by HUMMBL Research. External contributions to existing paper drafts require prior coordination — open an issue first. Discussions, replication attempts, and negative-result reports are welcome.
 
+Before opening a pull request, run:
+
+```bash
+python tools/validate_repository.py
+```
+
 ## Author
 
 **Reuben Bowlby** · [ORCID: 0009-0002-5620-1103](https://orcid.org/0009-0002-5620-1103) · HUMMBL
