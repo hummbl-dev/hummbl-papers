@@ -41,6 +41,16 @@ Before opening a pull request, run:
 python tools/validate_repository.py
 ```
 
+Release readiness runs the same validator in strict artifact mode:
+
+```bash
+python tools/validate_repository.py --release-artifacts
+```
+
+That mode intentionally fails until `papers/` and `notebooks/` contain actual
+paper/notebook artifacts beyond their layout README files. GitHub Actions runs
+the strict gate on version tags and manual release-readiness dispatches.
+
 ## Author
 
 **Reuben Bowlby** · [ORCID: 0009-0002-5620-1103](https://orcid.org/0009-0002-5620-1103) · HUMMBL

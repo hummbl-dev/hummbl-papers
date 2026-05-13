@@ -5,6 +5,15 @@ on:
   push:
     branches:
       - main
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      require-release-artifacts:
+        description: "Fail if papers/ or notebooks/ still contain only README.md placeholders"
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   validate:
@@ -29,3 +38,59 @@ jobs:
 
       - name: Validate repository metadata
         run: python tools/validate_repository.py
+
+  validate-zenodo:
+    name: validate .zenodo.json
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install check-jsonschema
+        run: python -m pip install --upgrade check-jsonschema
+
+      - name: Validate Zenodo metadata against legacy deposit schema
+        run: >
+          check-jsonschema
+          --schemafile
+          https://raw.githubusercontent.com/zenodo/zenodo/master/zenodo/modules/deposit/jsonschemas/deposits/records/legacyrecord.json
+          .zenodo.json
+
+  validate-citation:
+    name: validate CITATION.cff
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install cffconvert
+        run: python -m pip install --upgrade cffconvert==2.0.0
+
+      - name: Validate Citation File Format metadata
+        run: cffconvert --validate --infile CITATION.cff
+
+  release-artifacts:
+    name: validate release artifacts
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v') || inputs['require-release-artifacts']
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Require paper and notebook artifacts
+        run: python tools/validate_repository.py --release-artifacts

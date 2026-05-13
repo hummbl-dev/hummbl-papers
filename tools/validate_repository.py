@@ -79,12 +79,32 @@ def _validate_markdown_links() -> list[str]:
     return failures
 
 
+def _validate_release_artifacts() -> list[str]:
+    failures: list[str] = []
+    paper_entries = [
+        path for path in (REPO_ROOT / "papers").iterdir() if path.name != "README.md"
+    ]
+    notebook_entries = [
+        path for path in (REPO_ROOT / "notebooks").iterdir() if path.name != "README.md"
+    ]
+
+    if not paper_entries:
+        failures.append("papers/: no paper artifact exists beyond README.md")
+    if not notebook_entries:
+        failures.append("notebooks/: no notebook artifact exists beyond README.md")
+    return failures
+
+
 def main() -> int:
+    require_release_artifacts = "--release-artifacts" in sys.argv[1:]
     failures = [
         *_validate_json(),
         *_validate_citation(),
         *_validate_markdown_links(),
     ]
+    if require_release_artifacts:
+        failures.extend(_validate_release_artifacts())
+
     if failures:
         for failure in failures:
             print(f"FAIL {failure}", file=sys.stderr)
