@@ -6,7 +6,7 @@ Research portfolio and reproducibility artifacts for the HUMMBL governance infra
 
 This repository is the public home of HUMMBL's research output — papers, accompanying research notebooks, datasets, and figures. Each release receives a [Zenodo](https://zenodo.org/) DOI for citation.
 
-The papers target a single thesis: **governed AI infrastructure decomposes into a small set of composable primitives** — auditability (VERUM/TRACE), delegation (DCT, DELEGATION_DEPTH), coordination (COORDINATION_BUS), identity (AGENTIC_IDENTITY), safety (KILL_SWITCH), behavior (COMPLIANCE_THEATER, BKI), and measurement (BASE120, TRACE) — that together constitute a working substrate for AI governance.
+The papers target a single thesis: **governed AI infrastructure decomposes into a small set of composable primitives** — auditability (KRINEIA/TRACE), delegation (DCT, DELEGATION_DEPTH), coordination (COORDINATION_BUS), identity (AGENTIC_IDENTITY), safety (KILL_SWITCH), behavior (COMPLIANCE_THEATER, BKI), and measurement (BASE120, TRACE) — that together constitute a working substrate for AI governance.
 
 ## Layout
 
