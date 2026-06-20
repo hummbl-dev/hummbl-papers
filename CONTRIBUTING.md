@@ -4,7 +4,7 @@ Thank you for your interest in contributing to HUMMBL!
 
 ## How to Contribute
 
-1. Fork the repository and create a feature branch: `feat/<short-desc>`
+1. Fork the repository and create a feature branch: `type/agent/short-desc`
 2. Make focused changes — one concern per commit
 3. Ensure tests pass and the codebase follows existing conventions
 4. Open a pull request with a clear description
