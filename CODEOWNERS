@@ -1,0 +1,8 @@
+# CODEOWNERS — hummbl-dev/hummbl-papers
+CONSTITUTION.md          @reubenbowlby
+KRINEIA.md               @reubenbowlby
+hummbl.repo.yaml         @reubenbowlby
+CODEOWNERS               @reubenbowlby
+_receipts/               @reubenbowlby
+docs/adr/                @reubenbowlby
+*                        @reubenbowlby
