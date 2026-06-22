@@ -1,0 +1,48 @@
+# Citation File Format (CFF)
+# https://citation-file-format.github.io/
+
+cff-version: 1.2.0
+title: "HUMMBL Unified Tier Framework v1.0"
+message: "If you use this framework, please cite it as below."
+type: software
+authors:
+  - family-names: Bowlby
+    given-names: Reuben
+    email: contact@hummbl.dev
+    affiliation: "HUMMBL, LLC"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+repository-code: "https://github.com/hummbl-dev/HUMMBL-Unified-Tier-Framework"
+url: "https://hummbl-dev.github.io/HUMMBL-Unified-Tier-Framework/"
+abstract: >-
+  A comprehensive framework for classifying problem complexity, 
+  mapping learning progression, and selecting appropriate mental 
+  model combinations for systematic problem-solving. Features a 
+  dual-tier system (Problem Complexity Tiers 1-5 and Learning 
+  Progression Tiers 0-4), quantitative wickedness scoring 
+  methodology (5-question, 0-30 points), Base-N selection 
+  framework (Base6 through BASE120), and empirical validation 
+  from BASE120 mental models research (120 models at 9.1/10 quality).
+keywords:
+  - mental models
+  - problem solving
+  - complexity theory
+  - wicked problems
+  - learning progression
+  - decision making
+  - systems thinking
+  - cognitive frameworks
+  - wickedness assessment
+  - base-n architecture
+license: CC-BY-NC-ND-4.0
+version: 1.0.0
+date-released: 2025-11-01
+preferred-citation:
+  type: report
+  authors:
+    - family-names: Bowlby
+      given-names: Reuben
+  title: "HUMMBL Unified Tier Framework v1.0: Integrating Problem Complexity, Learning Progression, and Base-N Architecture"
+  year: 2025
+  institution:
+    name: "HUMMBL, LLC"
+  url: "https://hummbl-dev.github.io/HUMMBL-Unified-Tier-Framework/"

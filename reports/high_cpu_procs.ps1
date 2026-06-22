@@ -1,0 +1,1 @@
+Get-Process | Where-Object { $_.CPU -gt 60 } | Sort-Object CPU -Descending | Select-Object -First 10 Name, @{N='CPU_sec';E={[math]::Round($_.CPU)}}, @{N='MB';E={[math]::Round($_.WorkingSet64/1MB)}} | Format-Table

@@ -21,6 +21,9 @@ hummbl-papers/
 │   └── README.md          # per-paper layout convention
 ├── notebooks/             # research diaries — one .notebook.md per paper
 │   └── README.md          # notebook convention (Pineau + Pitt-Wipf)
+├── reports/               # autoresearch pipeline outputs (consolidated from hummbl-dev/autoresearch-reports)
+├── frameworks/            # HUMMBL framework definitions
+│   └── unified-tier/      # Unified Tier Framework v1.0 (consolidated from hummbl-dev/HUMMBL-Unified-Tier-Framework)
 └── docs/
     └── method/            # research methodology references
 ```

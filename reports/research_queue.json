@@ -1,0 +1,324 @@
+{
+    "version": "1.1",
+    "updated_at": "2026-06-20",
+    "queue": [
+        {
+            "id": "RQ-2026Q3-001",
+            "domain": "ai_governance_regulation",
+            "tier": 1,
+            "query": "Q3 2026 AI governance regulation EU AI Act enforcement NIST AI RMF adoption state law federal agency enterprise compliance update",
+            "target": [
+                "governance",
+                "compliance",
+                "evidence-gate"
+            ],
+            "max_papers": 12,
+            "recurrence": "monthly",
+            "last_run": null,
+            "status": "pending",
+            "notes": "Refresh regulatory landscape for HUMMBL governance and evidence products. Focus on EU AI Act enforcement (Aug 2026) and NIST AI RMF adoption."
+        },
+        {
+            "id": "RQ-2026Q3-002",
+            "domain": "mcp_security",
+            "tier": 1,
+            "query": "Model Context Protocol security threat model tool permissions prompt injection 2025 2026 OWASP MCP top 10",
+            "target": [
+                "mcp-server",
+                "agent-tools",
+                "security-scan"
+            ],
+            "max_papers": 12,
+            "recurrence": "monthly",
+            "last_run": null,
+            "status": "pending",
+            "notes": "Prioritize MCP/tool-call attack surface research for agent governance. Track OWASP MCP Top 10 if published."
+        },
+        {
+            "id": "RQ-2026Q3-003",
+            "domain": "agent_observability",
+            "tier": 2,
+            "query": "agent observability evaluation traces governance receipts autonomous agent monitoring 2025 2026 OpenTelemetry for agents",
+            "target": [
+                "agent-observability",
+                "coordination-bus",
+                "governance-bus"
+            ],
+            "max_papers": 10,
+            "recurrence": "monthly",
+            "last_run": null,
+            "status": "pending",
+            "notes": "Map observability practices into HUMMBL receipts and review loops. Explore OpenTelemetry for agent tracing."
+        },
+        {
+            "id": "RQ-2026Q3-004",
+            "domain": "local_inference_routing",
+            "tier": 2,
+            "query": "local inference routing GPU CPU cost latency model cascade small language models 2025 2026 vLLM Ollama M4 MPS",
+            "target": [
+                "NemoClaw",
+                "autoresearch-pipeline",
+                "cost-governor"
+            ],
+            "max_papers": 10,
+            "recurrence": "monthly",
+            "last_run": null,
+            "status": "pending",
+            "notes": "Update local/edge inference economics for Anvil (RTX) and nodezero (M4/MPS) routing. Compare vLLM vs Ollama performance."
+        },
+        {
+            "id": "RQ-2026Q3-005",
+            "domain": "enterprise_ai_procurement",
+            "tier": 3,
+            "query": "enterprise AI procurement risk vendor evaluation model transparency governance 2025 2026 procurement checklist",
+            "target": [
+                "hummbl-transparency",
+                "risk-register",
+                "vendor-review"
+            ],
+            "max_papers": 10,
+            "recurrence": "quarterly",
+            "last_run": null,
+            "status": "pending",
+            "notes": "Feed vendor transparency and procurement-risk artifacts. Develop a procurement checklist template."
+        },
+        {
+            "id": "RQ-2026Q3-006",
+            "domain": "agent_coordination_protocols",
+            "tier": 1,
+            "query": "multi-agent coordination protocols 2026 A2A protocol MCP fleet management agent-to-agent communication",
+            "target": [
+                "bus-protocol",
+                "founder-mode",
+                "hummbl-governance"
+            ],
+            "max_papers": 10,
+            "recurrence": "monthly",
+            "last_run": null,
+            "status": "pending",
+            "notes": "Research emerging agent coordination standards (Google A2A, MCP fleet patterns). Map to HUMMBL bus architecture."
+        },
+        {
+            "id": "RQ-2026Q3-007",
+            "domain": "cognitive_ledger_evolution",
+            "tier": 2,
+            "query": "cognitive ledger knowledge graph agent memory systems 2025 2026 CLP OpenBrain long-term agent memory",
+            "target": [
+                "cognition",
+                "founder-mode",
+                "hummbl-dev"
+            ],
+            "max_papers": 10,
+            "recurrence": "quarterly",
+            "last_run": null,
+            "status": "pending",
+            "notes": "Research agent memory and knowledge persistence. Inform CLP v2.0 and Open Brain roadmap."
+        },
+        {
+            "id": "RQ-001",
+            "domain": "prompt_engineering",
+            "tier": 1,
+            "query": "effective LLM tool use patterns for code generation and review 2025-2026",
+            "target": [
+                "skills/mtsmu-review",
+                "skills/simplify",
+                "skills/tdd"
+            ],
+            "max_papers": 10,
+            "recurrence": "monthly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/llm_tool_use_code_patterns_2026.md"
+        },
+        {
+            "id": "RQ-002",
+            "domain": "code_review",
+            "tier": 1,
+            "query": "automated code review effectiveness LLM-based defect detection 2025-2026",
+            "target": [
+                "skills/mtsmu-review",
+                "skills/pr-summary"
+            ],
+            "max_papers": 10,
+            "recurrence": "monthly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/automated_code_review_2026.md"
+        },
+        {
+            "id": "RQ-003",
+            "domain": "incident_response",
+            "tier": 1,
+            "query": "automated incident triage SRE runbook automation alert correlation 2025-2026",
+            "target": [
+                "skills/incident",
+                "skills/mtsmu-debug",
+                "skills/health"
+            ],
+            "max_papers": 10,
+            "recurrence": "monthly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/incident_response_automation_2026.md"
+        },
+        {
+            "id": "RQ-004",
+            "domain": "model_routing",
+            "tier": 2,
+            "query": "RouteLLM FrugalGPT cascading inference model selection optimization 2025-2026",
+            "target": [
+                "services/inference_agent"
+            ],
+            "max_papers": 10,
+            "recurrence": "monthly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/model_routing_cascading_inference_2026.md"
+        },
+        {
+            "id": "RQ-005",
+            "domain": "agent_coordination",
+            "tier": 2,
+            "query": "multi-agent communication protocols stigmergic coordination delegation patterns 2025-2026",
+            "target": [
+                "bus-protocol",
+                "cognition/"
+            ],
+            "max_papers": 10,
+            "recurrence": "monthly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/multi_agent_coordination_2026.md"
+        },
+        {
+            "id": "RQ-006",
+            "domain": "capability_security",
+            "tier": 2,
+            "query": "capability-based security object-capability model CHERI principle of least authority agent systems",
+            "target": [
+                "services/delegation_token",
+                "services/governance_bus"
+            ],
+            "max_papers": 10,
+            "recurrence": "monthly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/capability_security_agent_systems_2026.md"
+        },
+        {
+            "id": "RQ-007",
+            "domain": "test_strategy",
+            "tier": 1,
+            "query": "mutation testing property-based testing chaos engineering agent systems 2025-2026",
+            "target": [
+                "skills/tdd",
+                "skills/test-run",
+                "skills/coverage"
+            ],
+            "max_papers": 10,
+            "recurrence": "monthly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/test_strategy_agent_systems_2026.md"
+        },
+        {
+            "id": "RQ-008",
+            "domain": "cost_optimization",
+            "tier": 2,
+            "query": "LLM inference cost optimization token-efficient prompting speculative decoding 2025-2026",
+            "target": [
+                "services/cost_tracker",
+                "services/inference_agent"
+            ],
+            "max_papers": 10,
+            "recurrence": "monthly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/llm_cost_optimization_2026.md"
+        },
+        {
+            "id": "RQ-009",
+            "domain": "agent_frameworks",
+            "tier": 3,
+            "query": "CrewAI AutoGen LangGraph Devin OpenHands agent framework comparison 2025-2026",
+            "target": [
+                "architecture"
+            ],
+            "max_papers": 10,
+            "recurrence": "monthly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/agent_framework_comparison_2026.md"
+        },
+        {
+            "id": "RQ-PEP-001",
+            "domain": "peptide_sourcing",
+            "tier": 2,
+            "query": "peptide sourcing verification HPLC MS third-party testing 2024-2026 BPC-157 semaglutide purity",
+            "target": [
+                "reports/peptides"
+            ],
+            "max_papers": 15,
+            "recurrence": "quarterly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/peptides/peptide_sourcing_verification_2026.md"
+        },
+        {
+            "id": "RQ-PEP-002",
+            "domain": "peptide_mechanisms",
+            "tier": 1,
+            "query": "BPC-157 TB-500 semaglutide CJC-1295 mechanism of action tissue repair fat loss muscle growth 2024-2026",
+            "target": [
+                "reports/peptides"
+            ],
+            "max_papers": 15,
+            "recurrence": "quarterly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/peptides/peptide_mechanisms_2026.md"
+        },
+        {
+            "id": "RQ-PEP-003",
+            "domain": "peptide_testing",
+            "tier": 3,
+            "query": "peptide purity testing methods HPLC mass spectrometry at-home testing consumer accessible 2024-2026",
+            "target": [
+                "reports/peptides"
+            ],
+            "max_papers": 15,
+            "recurrence": "quarterly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/peptides/peptide_testing_methods_2026.md"
+        },
+        {
+            "id": "RQ-PEP-004",
+            "domain": "peptide_stability",
+            "tier": 2,
+            "query": "peptide stability degradation pathways BPC-157 semaglutide TB-500 CJC-1295 temperature light sensitivity reconstitution storage 2024-2026",
+            "target": [
+                "reports/peptides"
+            ],
+            "max_papers": 15,
+            "recurrence": "quarterly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/peptides/peptide_stability_2026.md"
+        },
+        {
+            "id": "RQ-PEP-005",
+            "domain": "peptide_regulation",
+            "tier": 1,
+            "query": "FDA WADA peptide regulation 2026 HHS Category 2 reclassification state-level peptide laws consumer legal status research chemicals 2025-2026",
+            "target": [
+                "reports/peptides"
+            ],
+            "max_papers": 15,
+            "recurrence": "quarterly",
+            "last_run": "2026-03-23",
+            "status": "completed",
+            "output": "reports/peptides/peptide_regulation_landscape_2026.md"
+        }
+    ]
+}

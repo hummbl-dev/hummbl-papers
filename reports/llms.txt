@@ -1,0 +1,30 @@
+# Autoresearch Reports
+
+This repository contains collected outputs and handoff reports from the HUMMBL autoresearch pipeline.
+
+## Repository Structure
+
+- `reports/` - Raw Autoresearch markdown output (pushed from Windows Desktop)
+- `findings/` - Distilled structured JSON (generated on nodezero)
+- `proposals/` - Draft improvement proposals (generated on nodezero)
+- `applied/` - Archive of accepted changes (moved after merge)
+- `research_queue.json` - Topic queue with recurrence schedules
+
+## Pipeline
+
+Windows Desktop (Autoresearch) → reports/
+nodezero (qwen3.5:9b distill) → findings/
+nodezero (synthesis + draft) → proposals/
+MBP (human review + merge) → applied/
+
+## Automation Posture
+
+This repository carries generated research artifacts plus a small amount of operational configuration. CI stays narrow and mechanical: parse research_queue.json, syntax-check shell helpers, syntax-check PowerShell helpers. Validation intentionally does not judge report quality, synthesis quality, or whether generated findings should be adopted.
+
+## Repository Health
+
+See docs/REPO_HEALTH.md for the authoritative repository health contract, validation command expectations, and branch-protection posture.
+
+## Links
+
+- Learn more at [hummbl.io](https://hummbl.io)

@@ -1,0 +1,9 @@
+# Summary: RQ-PEP-005 -- Peptide Regulation Landscape 2026
+
+**Source:** peptide_regulation_landscape_2026.md | **Date:** 2026-03-23
+
+- **HHS Secretary Kennedy announced reclassification of ~14/19 Category 2 peptides on Feb 27, 2026 (Joe Rogan #2461), but NO formal FDA rulemaking has been published as of March 2026.** All 19 peptides technically remain Category 2. The announcement was made on a podcast, not through official regulatory channels. Until the FDA formally updates the list, the legal status for compounding is unchanged.
+- **The gray-market "research use only" peptide industry is collapsing:** Peptide Sciences (largest vendor) shut down March 6, 2026. 7+ companies closed in 2025. Contributing factors: DOJ prosecution of Tailor Made Compounding ($1.79M forfeiture), FDA warning letters, Big Pharma litigation, and quality failures.
+- **WADA prohibits most peptides regardless of FDA status:** BPC-157 (since 2022), TB-500, CJC-1295, Ipamorelin, MK-677, AOD-9604 all banned at all times. GHK-Cu is a notable exception (not listed). A valid prescription does NOT provide WADA exemption -- athletes need a Therapeutic Use Exemption which is extremely difficult to obtain.
+- **State enforcement varies dramatically:** Connecticut leads (forced vendor shutdown, statewide compounding ban); Florida/Nevada/Arizona are permissive (broad telehealth prescribing, hub for peptide therapy clinics). 40+ state AGs sent a joint letter to FDA demanding federal action.
+- **If reclassification is formalized, it enables compounding pharmacy access with a prescription -- NOT over-the-counter sales.** The gray-market "research" sales model remains illegal regardless of Category 1 status. ~5 peptides (likely MK-677, Melanotan II, PEG-MGF, Dihexa, LL-37) may remain Category 2 due to safety concerns.
