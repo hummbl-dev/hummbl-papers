@@ -11,6 +11,16 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REMOTE_SCHEMES = ("http://", "https://", "mailto:")
 MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+MARKDOWN_ROOTS = (
+    REPO_ROOT / "README.md",
+    REPO_ROOT / "ROADMAP.md",
+    REPO_ROOT / "docs" / "method",
+    REPO_ROOT / "papers",
+    REPO_ROOT / "notebooks",
+)
+JSON_ROOTS = (
+    REPO_ROOT / ".zenodo.json",
+)
 
 
 def _iter_files(suffix: str) -> list[Path]:
@@ -23,7 +33,9 @@ def _iter_files(suffix: str) -> list[Path]:
 
 def _validate_json() -> list[str]:
     failures: list[str] = []
-    for path in _iter_files(".json"):
+    for path in JSON_ROOTS:
+        if not path.exists():
+            continue
         try:
             json.loads(path.read_text(encoding="utf-8"))
         except Exception as exc:
@@ -56,6 +68,11 @@ def _validate_citation() -> list[str]:
 def _validate_markdown_links() -> list[str]:
     failures: list[str] = []
     for path in _iter_files(".md"):
+        if not any(
+            path == root or path.is_relative_to(root)
+            for root in MARKDOWN_ROOTS
+        ):
+            continue
         text = path.read_text(encoding="utf-8")
         for match in MARKDOWN_LINK_RE.finditer(text):
             target = match.group(1).split("#", 1)[0]

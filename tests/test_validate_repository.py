@@ -51,7 +51,47 @@ def test_release_artifacts_gate_accepts_real_artifacts() -> None:
         assert failures == []
 
 
+def test_markdown_validation_ignores_legacy_trees() -> None:
+    """Only the active papers surface should be link-checked."""
+    old_repo_root = _VALIDATOR.REPO_ROOT
+    old_markdown_roots = _VALIDATOR.MARKDOWN_ROOTS
+    old_json_roots = _VALIDATOR.JSON_ROOTS
+
+    with tempfile.TemporaryDirectory() as root:
+        repo_root = Path(root)
+        (repo_root / "README.md").write_text(
+            "[papers](papers/README.md)\n", encoding="utf-8"
+        )
+        (repo_root / "papers").mkdir()
+        (repo_root / "papers" / "README.md").write_text("# papers\n", encoding="utf-8")
+        legacy = repo_root / "frameworks" / "unified-tier"
+        legacy.mkdir(parents=True)
+        (legacy / "CONTRIBUTING.md").write_text(
+            "Broken [link](missing.md)\n", encoding="utf-8"
+        )
+        (repo_root / ".zenodo.json").write_text("{}", encoding="utf-8")
+
+        try:
+            _VALIDATOR.REPO_ROOT = repo_root
+            _VALIDATOR.MARKDOWN_ROOTS = (
+                repo_root / "README.md",
+                repo_root / "ROADMAP.md",
+                repo_root / "docs" / "method",
+                repo_root / "papers",
+                repo_root / "notebooks",
+            )
+            _VALIDATOR.JSON_ROOTS = (repo_root / ".zenodo.json",)
+
+            failures = _VALIDATOR._validate_markdown_links()
+            assert failures == []
+        finally:
+            _VALIDATOR.REPO_ROOT = old_repo_root
+            _VALIDATOR.MARKDOWN_ROOTS = old_markdown_roots
+            _VALIDATOR.JSON_ROOTS = old_json_roots
+
+
 if __name__ == "__main__":
     test_release_artifacts_guard_allows_missing_dirs_without_crash()
     test_release_artifacts_gate_accepts_real_artifacts()
+    test_markdown_validation_ignores_legacy_trees()
     print("PASS: papers validator guard behavior checks")
