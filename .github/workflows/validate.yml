@@ -39,6 +39,9 @@ jobs:
       - name: Validate repository metadata
         run: python tools/validate_repository.py
 
+      - name: Validate repository guard behavior
+        run: python tests/test_validate_repository.py
+
   validate-zenodo:
     name: validate .zenodo.json
     runs-on: ubuntu-latest
