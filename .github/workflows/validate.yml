@@ -39,6 +39,9 @@ jobs:
       - name: Validate repository metadata
         run: python tools/validate_repository.py
 
+      - name: Validate repository guard behavior
+        run: python tests/test_validate_repository.py
+
   validate-zenodo:
     name: validate .zenodo.json
     runs-on: ubuntu-latest
@@ -82,7 +85,6 @@ jobs:
   release-artifacts:
     name: validate release artifacts
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/v') || inputs['require-release-artifacts']
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -93,4 +95,9 @@ jobs:
           python-version: "3.13"
 
       - name: Require paper and notebook artifacts
-        run: python tools/validate_repository.py --release-artifacts
+        run: >
+          python -c "import os, subprocess, sys;
+          should = os.environ.get('GITHUB_REF', '').startswith('refs/tags/v')
+          or os.environ.get('INPUT_REQUIRE_RELEASE_ARTIFACTS', '').lower() == 'true';
+          print('Release artifact validation required' if should else 'Skipping release artifact validation for non-release event');
+          sys.exit(subprocess.call([sys.executable, 'tools/validate_repository.py', '--release-artifacts']) if should else 0)"
