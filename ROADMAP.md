@@ -25,6 +25,7 @@ _Papers enter this table after publication. Each paper receives its own Zenodo d
 | # | Title | Status | Claim | Method | Notebook |
 |---|---|---|---|---|---|
 | 1 | [Coordination Bus as Governed Agent Infrastructure](papers/coordination-bus-governed-agent-infrastructure/README.md) | SCOPED | An append-only coordination bus can improve queue control and audit reconstruction when evidence is kept separate from execution authority. | case study | [notebook](notebooks/coordination-bus-governed-agent-infrastructure.notebook.md) |
+| 2 | [Experiment Receipt Discipline for Small-Model Autoresearch](papers/experiment-receipt-discipline-small-model-autoresearch/README.md) | PROPOSED | Experiment receipts make small-model autoresearch auditable by separating hypothesis, baseline, noise floor, measured outcome, and KEEP/DISCARD decision; the strongest finding is the governance value of negative-result receipts and baseline discipline, not a new architecture patch. | case study | [notebook](notebooks/experiment-receipt-discipline-small-model-autoresearch.notebook.md) |
 
 ## Hardening (in flight, founder-mode paper sprint)
 
@@ -72,6 +73,19 @@ _Each backlog entry declares what the paper proves BEFORE drafting begins. Pre-r
 ```
 
 _Backlog entries to be added._
+
+### #21 — Experiment Receipt Discipline for Small-Model Autoresearch
+
+- **Claim (one sentence):** Experiment receipts make small-model autoresearch auditable by separating hypothesis, baseline, noise floor, measured outcome, and KEEP/DISCARD decision; the strongest finding is the governance value of negative-result receipts and baseline discipline, not a new architecture patch.
+- **Method:** case study
+- **Audience:** academic · industry practitioner
+- **Depends on:** — (first methods paper; complements #1 coordination-bus case study)
+- **Effort:** M
+- **Status:** PROPOSED
+- **Notebook:** `notebooks/experiment-receipt-discipline-small-model-autoresearch.notebook.md`
+- **Pre-registered:** 2026-07-06
+- **Source packet:** `hummbl-dev/research-source-packets#9` (first-party experiment receipt corpus, candidate-only)
+- **Scope boundary:** Do not claim generality beyond the 26M-parameter / short-training regime until replicated.
 
 ## Conventions
 
