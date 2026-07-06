@@ -47,6 +47,6 @@ latexmk -pdf paper.tex
 4. Paper SHIPPED — git tag `v{version}` triggers Zenodo DOI mint per release
 5. ROADMAP.md table updated with DOI
 
-## Paper directories here (to be populated)
+## Paper directories here
 
-_None yet — scaffolding only. First paper arrives once founder-mode paper-hardening sweep completes._
+- [coordination-bus-governed-agent-infrastructure](coordination-bus-governed-agent-infrastructure/README.md) — SCOPED case-study seed from the founder-mode hardening sprint.
