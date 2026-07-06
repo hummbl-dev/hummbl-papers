@@ -58,7 +58,7 @@ def test_markdown_validation_ignores_legacy_trees() -> None:
     old_json_roots = _VALIDATOR.JSON_ROOTS
 
     with tempfile.TemporaryDirectory() as root:
-        repo_root = Path(root)
+        repo_root = Path(root).resolve()
         (repo_root / "README.md").write_text(
             "[papers](papers/README.md)\n", encoding="utf-8"
         )

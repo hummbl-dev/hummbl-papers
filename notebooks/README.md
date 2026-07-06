@@ -61,6 +61,6 @@ Why I think Y means Z — explicitly distinct from what was observed.
 - **Document failures equally.** Negative results go in `Dead ends`. Do not silently drop approaches that didn't work — future you and future readers need them.
 - **Pre-register predictions.** Write what you expect BEFORE running the experiment or derivation. A prediction/observation mismatch is where real learning happens.
 
-## Notebooks here (to be populated)
+## Notebooks here
 
-_None yet — scaffolding only. First notebook arrives with its paper._
+- [coordination-bus-governed-agent-infrastructure.notebook.md](coordination-bus-governed-agent-infrastructure.notebook.md) — post-hoc seed notebook for the first hardening-sprint paper artifact.

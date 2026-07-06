@@ -14,11 +14,17 @@ Portfolio status, pre-registered backlog, and active work.
 
 ## Shipped (to be populated as papers are seeded)
 
-_First paper will be seeded here once the founder-mode paper-hardening session posts a done-STATUS and a paper is selected for publication. Each paper receives its own Zenodo deposit → own concept DOI._
+_Papers enter this table after publication. Each paper receives its own Zenodo deposit, then its own concept DOI._
 
 | # | Title | Claim | Method | arXiv | Zenodo DOI |
 |---|---|---|---|---|---|
 | — | — | — | — | — | — |
+
+## Seeded artifacts (pre-publication)
+
+| # | Title | Status | Claim | Method | Notebook |
+|---|---|---|---|---|---|
+| 1 | [Coordination Bus as Governed Agent Infrastructure](papers/coordination-bus-governed-agent-infrastructure/README.md) | SCOPED | An append-only coordination bus can improve queue control and audit reconstruction when evidence is kept separate from execution authority. | case study | [notebook](notebooks/coordination-bus-governed-agent-infrastructure.notebook.md) |
 
 ## Hardening (in flight, founder-mode paper sprint)
 
@@ -33,7 +39,7 @@ Papers in the current sweep (see founder-mode `docs/publications/` for drafts):
 - BENCHMARK_DECAY
 - BKI_GOVERNANCE
 - COMPLIANCE_THEATER
-- COORDINATION_BUS
+- COORDINATION_BUS — seeded here as [Coordination Bus as Governed Agent Infrastructure](papers/coordination-bus-governed-agent-infrastructure/README.md)
 - DELEGATION_DEPTH
 - DEPTH_LAUNDERING
 - FRAMEWORK_CROSSWALK
