@@ -64,3 +64,4 @@ Why I think Y means Z — explicitly distinct from what was observed.
 ## Notebooks here
 
 - [coordination-bus-governed-agent-infrastructure.notebook.md](coordination-bus-governed-agent-infrastructure.notebook.md) — post-hoc seed notebook for the first hardening-sprint paper artifact.
+- [experiment-receipt-discipline-small-model-autoresearch.notebook.md](experiment-receipt-discipline-small-model-autoresearch.notebook.md) — pre-registered seed notebook for the autoresearch-pipeline receipt-discipline methods paper.

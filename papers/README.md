@@ -50,3 +50,4 @@ latexmk -pdf paper.tex
 ## Paper directories here
 
 - [coordination-bus-governed-agent-infrastructure](coordination-bus-governed-agent-infrastructure/README.md) — SCOPED case-study seed from the founder-mode hardening sprint.
+- [experiment-receipt-discipline-small-model-autoresearch](experiment-receipt-discipline-small-model-autoresearch/README.md) — PROPOSED methods case study from the autoresearch-pipeline receipt corpus.
