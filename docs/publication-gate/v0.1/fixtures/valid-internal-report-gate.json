@@ -1,0 +1,91 @@
+{
+  "schema_version": "publication_readiness_gate.v0.1",
+  "artifact_id": "hummbl-tuples-v2-spec",
+  "artifact_class": "INTERNAL_RESEARCH_MEMO",
+  "gate_dimensions": {
+    "contribution_novelty": {
+      "research_question": "Can typed tuples enable bounded delegation in AI-native systems?",
+      "prior_art_searched": true,
+      "adjacent_disciplines_searched": true,
+      "narrow_contribution_claim": "A typed envelope architecture separating universal from governance layers for delegation tuples",
+      "non_novel_components": ["HMAC-SHA256 signing", "JSON Schema validation", "append-only logging"],
+      "novelty_challenge": {
+        "completed": true,
+        "reviewer_not_author": true,
+        "findings": "Novelty is compositional — envelope architecture is the contribution, not individual primitives"
+      }
+    },
+    "evidence_methods": {
+      "claim_evidence_map": true,
+      "methods_sufficient": true,
+      "data_lineage": true,
+      "exclusions_documented": true,
+      "negative_results_preserved": true,
+      "uncertainty_stated": true,
+      "calculations_verified": true
+    },
+    "reproducibility": {
+      "environment_locked": true,
+      "versions_recorded": true,
+      "commit_shas": ["ba3af1d9"],
+      "commands_documented": true,
+      "expected_outputs": true,
+      "seeds_disclosed": null,
+      "data_available": true,
+      "data_restrictions_justified": null,
+      "independent_reproduction": null
+    },
+    "authorship_ai": {
+      "human_authors": ["Reuben Bowlby"],
+      "corresponding_contact": "reuben@hummbl.dev",
+      "contribution_record": true,
+      "conflicts_disclosed": true,
+      "ai_disclosure": true,
+      "venue_policy_verified": null,
+      "no_agent_as_author": true
+    },
+    "ethics_rights": {
+      "human_subjects_determination": true,
+      "sensitive_data_determination": true,
+      "consent_obtained": null,
+      "license_verified": true,
+      "dual_use_review": null
+    },
+    "independent_review": {
+      "reviewer_not_author": true,
+      "scope": ["methods", "evidence", "novelty", "reproducibility", "reputational_risk"],
+      "unresolved_objections": ["Whether the envelope architecture is sufficiently distinct from existing capability token patterns"]
+    },
+    "public_communication": {
+      "title_does_not_overstate": true,
+      "limitations_preserved": true,
+      "preprint_status_explicit": true,
+      "no_peer_reviewed_claim_before_review": true,
+      "no_marketing_overclaim": true,
+      "correction_contact_visible": true,
+      "version_history_visible": true
+    }
+  },
+  "disposition": "INTERNAL_REPORT_READY",
+  "disposition_rationale": "Artifact has complete methods, evidence, and reproducibility. Novelty challenge completed with one unresolved objection. Not yet ready for preprint — prior-art search needs broader disciplinary coverage.",
+  "unresolved_risks": ["Envelope architecture novelty needs broader prior-art challenge before preprint"],
+  "anti_gaming_checks": {
+    "prose_not_substitute_for_methods": true,
+    "citation_volume_not_substitute_for_analysis": true,
+    "self_review_not_independence": true,
+    "tests_not_scientific_validation": true,
+    "internal_benchmarks_not_generality": true,
+    "synthetic_not_empirical": true,
+    "no_hidden_exclusions": true,
+    "arxiv_not_peer_review": true,
+    "doi_not_quality_validation": true,
+    "citations_independently_verified": true
+  },
+  "reviewer_independence": {
+    "reviewer_not_author": true,
+    "reviewer_not_originating_agent": true,
+    "review_count": 2
+  },
+  "evaluated_at": "2026-07-10T12:00:00Z",
+  "evaluated_by": "independent-reviewer"
+}
