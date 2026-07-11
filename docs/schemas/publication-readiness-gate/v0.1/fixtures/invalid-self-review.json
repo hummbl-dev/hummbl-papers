@@ -1,0 +1,46 @@
+{
+  "fixture_id": "invalid-self-review",
+  "type": "invalid",
+  "description": "Gate evaluation where self-review is represented as independence",
+  "gate": {
+    "gate_id": "gate-002",
+    "artifact_id": "report-002",
+    "artifact_class": "PREPRINT_CANDIDATE",
+    "evaluation_date": "2026-07-11",
+    "evaluator": {"evaluator_id": "author-A", "independent": false, "qualifications": "author"},
+    "gate_dimensions": {
+      "contribution_and_novelty": {"research_question": "X", "prior_art": "none", "contribution_claim": "novel", "non_novel_components": [], "novelty_challenge": {"performed": false, "result": "skipped"}, "discipline_adjacent_search": {"performed": false, "result": "skipped"}},
+      "evidence_and_methods": {"claim_to_evidence_map": true, "methods_sufficient": true, "data_lineage": true, "exclusions": false, "negative_results": false, "uncertainty": false, "calculation_verification": true},
+      "reproducibility": {"environment_lock": true, "artifact_versions": true, "commands_documented": true, "random_seeds_disclosed": true, "data_availability": true, "reproduction_attempt": {"performed": false, "proportionate": false, "result": "skipped"}, "reproducibility_type": "conceptual_illustration"},
+      "authorship_and_ai_disclosure": {"human_authors": true, "contribution_record": true, "conflicts_disclosed": false, "ai_assistance_recorded": false, "venue_policy_verified": false, "no_agent_as_author": true},
+      "ethics_privacy_rights_licenses": {"human_subjects_determination": true, "sensitive_data_determination": true, "consent_verified": true, "rights_verified": true, "dual_use_review": {"performed": false, "relevant": false}, "legal_caveat": {"added": false, "relevant": false}},
+      "independent_review": {
+        "methods_review": {"performed": true, "reviewer_independent": false},
+        "evidence_review": {"performed": true, "reviewer_independent": false},
+        "novelty_review": {"performed": true, "reviewer_independent": false},
+        "reproducibility_review": {"performed": false, "reviewer_independent": false},
+        "reputational_risk_review": {"performed": false, "reviewer_independent": false},
+        "unresolved_objections": ["self-review is not independent"]
+      },
+      "public_communication": {"title_accuracy": false, "summary_preserves_limitations": false, "preprint_status_explicit": true, "no_peer_reviewed_claim": true, "no_marketing_inflation": false, "correction_contact_visible": true}
+    },
+    "disposition": "BLOCK",
+    "disposition_rationale": "Self-review represented as independence. Multiple gate failures.",
+    "unresolved_risks": ["self-review_as_independence", "missing_novelty_challenge", "missing_reproducibility_review", "title_overstates_maturity"],
+    "anti_gaming_checks": {
+      "polished_prose_weak_methods": true,
+      "citation_volume_as_prior_art": false,
+      "self_review_as_independence": true,
+      "tests_as_scientific_validation": false,
+      "internal_benchmarks_as_generality": false,
+      "synthetic_as_empirical": false,
+      "benchmark_selection_after_results": false,
+      "hidden_exclusions": true,
+      "arxiv_as_peer_review": false,
+      "doi_as_quality_validation": false,
+      "unverified_agent_citations": false
+    }
+  },
+  "expected_validation": "invalid",
+  "expected_errors": ["self_review_as_independence", "missing_independent_review", "title_overstates_maturity", "hidden_exclusions"]
+}

@@ -1,0 +1,27 @@
+{
+  "fixture_id": "adv-synthetic-as-empirical",
+  "type": "adversarial",
+  "description": "Synthetic examples represented as empirical evidence",
+  "gate": {
+    "gate_id": "gate-004",
+    "artifact_id": "report-004",
+    "artifact_class": "DATED_TECHNICAL_REPORT",
+    "evaluation_date": "2026-07-11",
+    "evaluator": {"evaluator_id": "reviewer-C", "independent": true, "qualifications": "data scientist"},
+    "gate_dimensions": {
+      "contribution_and_novelty": {"research_question": "X", "prior_art": "none", "contribution_claim": "empirical validation of X", "non_novel_components": [], "novelty_challenge": {"performed": true, "result": "holds"}, "discipline_adjacent_search": {"performed": true, "result": "none"}},
+      "evidence_and_methods": {"claim_to_evidence_map": true, "methods_sufficient": false, "data_lineage": false, "exclusions": false, "negative_results": false, "uncertainty": false, "calculation_verification": true},
+      "reproducibility": {"environment_lock": true, "artifact_versions": true, "commands_documented": true, "random_seeds_disclosed": true, "data_availability": true, "reproduction_attempt": {"performed": true, "proportionate": true, "result": "reproduced"}, "reproducibility_type": "conceptual_illustration"},
+      "authorship_and_ai_disclosure": {"human_authors": true, "contribution_record": true, "conflicts_disclosed": true, "ai_assistance_recorded": true, "venue_policy_verified": true, "no_agent_as_author": true},
+      "ethics_privacy_rights_licenses": {"human_subjects_determination": true, "sensitive_data_determination": true, "consent_verified": true, "rights_verified": true, "dual_use_review": {"performed": false, "relevant": false}, "legal_caveat": {"added": false, "relevant": false}},
+      "independent_review": {"methods_review": {"performed": true, "reviewer_independent": true}, "evidence_review": {"performed": true, "reviewer_independent": true}, "novelty_review": {"performed": true, "reviewer_independent": true}, "reproducibility_review": {"performed": true, "reviewer_independent": true}, "reputational_risk_review": {"performed": true, "reviewer_independent": true}, "unresolved_objections": ["synthetic examples labeled as empirical"]},
+      "public_communication": {"title_accuracy": false, "summary_preserves_limitations": false, "preprint_status_explicit": true, "no_peer_reviewed_claim": true, "no_marketing_inflation": false, "correction_contact_visible": true}
+    },
+    "disposition": "BLOCK",
+    "disposition_rationale": "Synthetic examples represented as empirical evidence. Methods insufficient. Title overstates maturity.",
+    "unresolved_risks": ["synthetic_as_empirical", "methods_insufficient", "title_overstates"],
+    "anti_gaming_checks": {"polished_prose_weak_methods": true, "citation_volume_as_prior_art": false, "self_review_as_independence": false, "tests_as_scientific_validation": false, "internal_benchmarks_as_generality": false, "synthetic_as_empirical": true, "benchmark_selection_after_results": false, "hidden_exclusions": true, "arxiv_as_peer_review": false, "doi_as_quality_validation": false, "unverified_agent_citations": false}
+  },
+  "expected_validation": "invalid",
+  "expected_errors": ["synthetic_as_empirical", "methods_insufficient", "title_overstates_maturity", "hidden_exclusions"]
+}
