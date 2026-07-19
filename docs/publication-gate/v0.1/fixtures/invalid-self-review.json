@@ -1,0 +1,72 @@
+{
+  "schema_version": "publication_readiness_gate.v0.1",
+  "artifact_id": "invalid-self-review",
+  "artifact_class": "PREPRINT_CANDIDATE",
+  "gate_dimensions": {
+    "contribution_novelty": {
+      "research_question": "How does X work?",
+      "prior_art_searched": true,
+      "adjacent_disciplines_searched": false,
+      "narrow_contribution_claim": "We propose X",
+      "non_novel_components": [],
+      "novelty_challenge": {
+        "completed": false,
+        "reviewer_not_author": false,
+        "findings": ""
+      }
+    },
+    "evidence_methods": {
+      "claim_evidence_map": false,
+      "methods_sufficient": false,
+      "negative_results_preserved": false
+    },
+    "reproducibility": {
+      "environment_locked": false,
+      "versions_recorded": false,
+      "commands_documented": false
+    },
+    "authorship_ai": {
+      "human_authors": ["Reuben Bowlby"],
+      "corresponding_contact": "reuben@hummbl.dev",
+      "contribution_record": false,
+      "ai_disclosure": false,
+      "no_agent_as_author": true
+    },
+    "ethics_rights": {
+      "human_subjects_determination": false,
+      "sensitive_data_determination": false,
+      "license_verified": true
+    },
+    "independent_review": {
+      "reviewer_not_author": false,
+      "scope": ["methods"],
+      "unresolved_objections": []
+    },
+    "public_communication": {
+      "title_does_not_overstate": false,
+      "limitations_preserved": false,
+      "preprint_status_explicit": true
+    }
+  },
+  "disposition": "PREPRINT_READY",
+  "disposition_rationale": "Polished prose, looks good",
+  "anti_gaming_checks": {
+    "prose_not_substitute_for_methods": false,
+    "citation_volume_not_substitute_for_analysis": true,
+    "self_review_not_independence": false,
+    "tests_not_scientific_validation": true,
+    "internal_benchmarks_not_generality": true,
+    "synthetic_not_empirical": true,
+    "no_hidden_exclusions": true,
+    "arxiv_not_peer_review": true,
+    "doi_not_quality_validation": true,
+    "citations_independently_verified": true
+  },
+  "reviewer_independence": {
+    "reviewer_not_author": false,
+    "reviewer_not_originating_agent": false,
+    "review_count": 1
+  },
+  "evaluated_at": "2026-07-10T12:00:00Z",
+  "evaluated_by": "same-agent"
+}

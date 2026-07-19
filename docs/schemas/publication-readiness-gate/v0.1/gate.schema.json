@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hummbl.dev/schemas/publication-readiness-gate/v0.1/gate.schema.json",
+  "title": "Universal Publication Readiness Gate v0.1",
+  "description": "Machine-readable gate evaluation for HUMMBL scholarly artifacts",
+  "type": "object",
+  "required": [
+    "gate_id",
+    "artifact_id",
+    "artifact_class",
+    "evaluation_date",
+    "evaluator",
+    "gate_dimensions",
+    "disposition",
+    "disposition_rationale",
+    "unresolved_risks"
+  ],
+  "properties": {
+    "gate_id": {"type": "string"},
+    "artifact_id": {"type": "string"},
+    "artifact_class": {
+      "enum": ["EXPLORATORY_NOTE", "INTERNAL_RESEARCH_MEMO", "DATED_TECHNICAL_REPORT", "REPRODUCIBILITY_PACKET", "PREPRINT_CANDIDATE", "VENUE_SUBMISSION_CANDIDATE", "SUBMITTED_MANUSCRIPT", "PEER_REVIEWED_PUBLICATION", "CORRECTION", "SUPERSESSION", "RETRACTION"]
+    },
+    "evaluation_date": {"type": "string", "format": "date"},
+    "evaluator": {
+      "type": "object",
+      "required": ["evaluator_id", "independent"],
+      "properties": {
+        "evaluator_id": {"type": "string"},
+        "independent": {"type": "boolean"},
+        "qualifications": {"type": "string"}
+      }
+    },
+    "gate_dimensions": {
+      "type": "object",
+      "required": ["contribution_and_novelty", "evidence_and_methods", "reproducibility", "authorship_and_ai_disclosure", "ethics_privacy_rights_licenses", "independent_review", "public_communication"],
+      "properties": {
+        "contribution_and_novelty": {
+          "type": "object",
+          "required": ["research_question", "prior_art", "contribution_claim", "non_novel_components", "novelty_challenge", "discipline_adjacent_search"],
+          "properties": {
+            "research_question": {"type": "string"},
+            "prior_art": {"type": "string"},
+            "contribution_claim": {"type": "string"},
+            "non_novel_components": {"type": "array", "items": {"type": "string"}},
+            "novelty_challenge": {"type": "object", "required": ["performed", "result"], "properties": {"performed": {"type": "boolean"}, "result": {"type": "string"}}},
+            "discipline_adjacent_search": {"type": "object", "required": ["performed", "result"], "properties": {"performed": {"type": "boolean"}, "result": {"type": "string"}}}
+          }
+        },
+        "evidence_and_methods": {
+          "type": "object",
+          "required": ["claim_to_evidence_map", "methods_sufficient", "data_lineage", "exclusions", "negative_results", "uncertainty", "calculation_verification"],
+          "properties": {
+            "claim_to_evidence_map": {"type": "boolean"},
+            "methods_sufficient": {"type": "boolean"},
+            "data_lineage": {"type": "boolean"},
+            "exclusions": {"type": "boolean"},
+            "negative_results": {"type": "boolean"},
+            "uncertainty": {"type": "boolean"},
+            "calculation_verification": {"type": "boolean"}
+          }
+        },
+        "reproducibility": {
+          "type": "object",
+          "required": ["environment_lock", "artifact_versions", "commands_documented", "random_seeds_disclosed", "data_availability", "reproduction_attempt", "reproducibility_type"],
+          "properties": {
+            "environment_lock": {"type": "boolean"},
+            "artifact_versions": {"type": "boolean"},
+            "commands_documented": {"type": "boolean"},
+            "random_seeds_disclosed": {"type": "boolean"},
+            "data_availability": {"type": "boolean"},
+            "reproduction_attempt": {"type": "object", "required": ["performed", "proportionate"], "properties": {"performed": {"type": "boolean"}, "proportionate": {"type": "boolean"}, "result": {"type": "string"}}},
+            "reproducibility_type": {"enum": ["reproducibility", "replication", "conceptual_illustration"]}
+          }
+        },
+        "authorship_and_ai_disclosure": {
+          "type": "object",
+          "required": ["human_authors", "contribution_record", "conflicts_disclosed", "ai_assistance_recorded", "venue_policy_verified", "no_agent_as_author"],
+          "properties": {
+            "human_authors": {"type": "boolean"},
+            "contribution_record": {"type": "boolean"},
+            "conflicts_disclosed": {"type": "boolean"},
+            "ai_assistance_recorded": {"type": "boolean"},
+            "venue_policy_verified": {"type": "boolean"},
+            "no_agent_as_author": {"type": "boolean"}
+          }
+        },
+        "ethics_privacy_rights_licenses": {
+          "type": "object",
+          "required": ["human_subjects_determination", "sensitive_data_determination", "consent_verified", "rights_verified", "dual_use_review", "legal_caveat"],
+          "properties": {
+            "human_subjects_determination": {"type": "boolean"},
+            "sensitive_data_determination": {"type": "boolean"},
+            "consent_verified": {"type": "boolean"},
+            "rights_verified": {"type": "boolean"},
+            "dual_use_review": {"type": "object", "required": ["performed", "relevant"], "properties": {"performed": {"type": "boolean"}, "relevant": {"type": "boolean"}}},
+            "legal_caveat": {"type": "object", "required": ["added", "relevant"], "properties": {"added": {"type": "boolean"}, "relevant": {"type": "boolean"}}}
+          }
+        },
+        "independent_review": {
+          "type": "object",
+          "required": ["methods_review", "evidence_review", "novelty_review", "reproducibility_review", "reputational_risk_review", "unresolved_objections"],
+          "properties": {
+            "methods_review": {"type": "object", "required": ["performed", "reviewer_independent"], "properties": {"performed": {"type": "boolean"}, "reviewer_independent": {"type": "boolean"}}},
+            "evidence_review": {"type": "object", "required": ["performed", "reviewer_independent"], "properties": {"performed": {"type": "boolean"}, "reviewer_independent": {"type": "boolean"}}},
+            "novelty_review": {"type": "object", "required": ["performed", "reviewer_independent"], "properties": {"performed": {"type": "boolean"}, "reviewer_independent": {"type": "boolean"}}},
+            "reproducibility_review": {"type": "object", "required": ["performed", "reviewer_independent"], "properties": {"performed": {"type": "boolean"}, "reviewer_independent": {"type": "boolean"}}},
+            "reputational_risk_review": {"type": "object", "required": ["performed", "reviewer_independent"], "properties": {"performed": {"type": "boolean"}, "reviewer_independent": {"type": "boolean"}}},
+            "unresolved_objections": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "public_communication": {
+          "type": "object",
+          "required": ["title_accuracy", "summary_preserves_limitations", "preprint_status_explicit", "no_peer_reviewed_claim", "no_marketing_inflation", "correction_contact_visible"],
+          "properties": {
+            "title_accuracy": {"type": "boolean"},
+            "summary_preserves_limitations": {"type": "boolean"},
+            "preprint_status_explicit": {"type": "boolean"},
+            "no_peer_reviewed_claim": {"type": "boolean"},
+            "no_marketing_inflation": {"type": "boolean"},
+            "correction_contact_visible": {"type": "boolean"}
+          }
+        }
+      }
+    },
+    "disposition": {
+      "enum": ["BLOCK", "RESEARCH_NOTE_ONLY", "INTERNAL_REPORT_READY", "TECHNICAL_REPORT_READY", "PREPRINT_READY", "SUBMISSION_READY", "PUBLICATION_READY", "CORRECTION_REQUIRED", "SUPERSEDE", "RETRACT"]
+    },
+    "disposition_rationale": {"type": "string"},
+    "unresolved_risks": {"type": "array", "items": {"type": "string"}},
+    "anti_gaming_checks": {
+      "type": "object",
+      "properties": {
+        "polished_prose_weak_methods": {"type": "boolean"},
+        "citation_volume_as_prior_art": {"type": "boolean"},
+        "self_review_as_independence": {"type": "boolean"},
+        "tests_as_scientific_validation": {"type": "boolean"},
+        "internal_benchmarks_as_generality": {"type": "boolean"},
+        "synthetic_as_empirical": {"type": "boolean"},
+        "benchmark_selection_after_results": {"type": "boolean"},
+        "hidden_exclusions": {"type": "boolean"},
+        "arxiv_as_peer_review": {"type": "boolean"},
+        "doi_as_quality_validation": {"type": "boolean"},
+        "unverified_agent_citations": {"type": "boolean"}
+      }
+    }
+  }
+}

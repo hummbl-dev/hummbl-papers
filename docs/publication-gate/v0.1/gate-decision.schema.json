@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hummbl.dev/schemas/publication-gate/v0.1/gate-decision.schema.json",
+  "title": "Publication Readiness Gate Decision v0.1",
+  "description": "Machine-readable record of a publication readiness gate evaluation.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "artifact_class",
+    "gate_dimensions",
+    "disposition",
+    "disposition_rationale",
+    "anti_gaming_checks",
+    "reviewer_independence",
+    "evaluated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "publication_readiness_gate.v0.1"
+    },
+    "artifact_id": {"type": "string"},
+    "artifact_class": {
+      "type": "string",
+      "enum": ["EXPLORATORY_NOTE", "INTERNAL_RESEARCH_MEMO",
+               "DATED_TECHNICAL_REPORT", "REPRODUCIBILITY_PACKET",
+               "PREPRINT_CANDIDATE", "VENUE_SUBMISSION_CANDIDATE",
+               "SUBMITTED_MANUSCRIPT", "PEER_REVIEWED_PUBLICATION",
+               "CORRECTION", "SUPERSESSION", "RETRACTION"]
+    },
+    "gate_dimensions": {
+      "type": "object",
+      "required": ["contribution_novelty", "evidence_methods", "reproducibility", "authorship_ai", "ethics_rights", "independent_review", "public_communication"],
+      "properties": {
+        "contribution_novelty": {
+          "type": "object",
+          "required": ["research_question", "prior_art_searched", "narrow_contribution_claim", "non_novel_components", "novelty_challenge"],
+          "properties": {
+            "research_question": {"type": "string"},
+            "prior_art_searched": {"type": "boolean"},
+            "adjacent_disciplines_searched": {"type": "boolean"},
+            "narrow_contribution_claim": {"type": "string"},
+            "non_novel_components": {"type": "array", "items": {"type": "string"}},
+            "novelty_challenge": {
+              "type": "object",
+              "required": ["completed", "reviewer_not_author"],
+              "properties": {
+                "completed": {"type": "boolean"},
+                "reviewer_not_author": {"type": "boolean"},
+                "findings": {"type": "string"}
+              }
+            }
+          }
+        },
+        "evidence_methods": {
+          "type": "object",
+          "required": ["claim_evidence_map", "methods_sufficient", "negative_results_preserved"],
+          "properties": {
+            "claim_evidence_map": {"type": "boolean"},
+            "methods_sufficient": {"type": "boolean"},
+            "data_lineage": {"type": "boolean"},
+            "exclusions_documented": {"type": "boolean"},
+            "negative_results_preserved": {"type": "boolean"},
+            "uncertainty_stated": {"type": "boolean"},
+            "calculations_verified": {"type": "boolean"}
+          }
+        },
+        "reproducibility": {
+          "type": "object",
+          "required": ["environment_locked", "versions_recorded", "commands_documented"],
+          "properties": {
+            "environment_locked": {"type": "boolean"},
+            "versions_recorded": {"type": "boolean"},
+            "commit_shas": {"type": "array", "items": {"type": "string"}},
+            "commands_documented": {"type": "boolean"},
+            "expected_outputs": {"type": "boolean"},
+            "seeds_disclosed": {"type": ["boolean", "null"]},
+            "data_available": {"type": ["boolean", "null"]},
+            "data_restrictions_justified": {"type": ["boolean", "null"]},
+            "independent_reproduction": {"type": ["boolean", "null"]}
+          }
+        },
+        "authorship_ai": {
+          "type": "object",
+          "required": ["human_authors", "corresponding_contact", "contribution_record", "ai_disclosure", "no_agent_as_author"],
+          "properties": {
+            "human_authors": {"type": "array", "items": {"type": "string"}},
+            "corresponding_contact": {"type": "string"},
+            "contribution_record": {"type": "boolean"},
+            "conflicts_disclosed": {"type": "boolean"},
+            "ai_disclosure": {"type": "boolean"},
+            "venue_policy_verified": {"type": ["boolean", "null"]},
+            "no_agent_as_author": {"type": "boolean"}
+          }
+        },
+        "ethics_rights": {
+          "type": "object",
+          "required": ["human_subjects_determination", "sensitive_data_determination", "license_verified"],
+          "properties": {
+            "human_subjects_determination": {"type": "boolean"},
+            "sensitive_data_determination": {"type": "boolean"},
+            "consent_obtained": {"type": ["boolean", "null"]},
+            "license_verified": {"type": "boolean"},
+            "dual_use_review": {"type": ["boolean", "null"]}
+          }
+        },
+        "independent_review": {
+          "type": "object",
+          "required": ["reviewer_not_author", "scope"],
+          "properties": {
+            "reviewer_not_author": {"type": "boolean"},
+            "scope": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["methods", "evidence", "novelty", "reproducibility", "reputational_risk"]
+              }
+            },
+            "unresolved_objections": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "public_communication": {
+          "type": "object",
+          "required": ["title_does_not_overstate", "limitations_preserved", "preprint_status_explicit"],
+          "properties": {
+            "title_does_not_overstate": {"type": "boolean"},
+            "limitations_preserved": {"type": "boolean"},
+            "preprint_status_explicit": {"type": "boolean"},
+            "no_peer_reviewed_claim_before_review": {"type": "boolean"},
+            "no_marketing_overclaim": {"type": "boolean"},
+            "correction_contact_visible": {"type": "boolean"},
+            "version_history_visible": {"type": "boolean"}
+          }
+        }
+      }
+    },
+    "disposition": {
+      "type": "string",
+      "enum": ["BLOCK", "RESEARCH_NOTE_ONLY", "INTERNAL_REPORT_READY",
+               "TECHNICAL_REPORT_READY", "PREPRINT_READY",
+               "SUBMISSION_READY", "PUBLICATION_READY",
+               "CORRECTION_REQUIRED", "SUPERSEDE", "RETRACT"]
+    },
+    "disposition_rationale": {"type": "string"},
+    "unresolved_risks": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "anti_gaming_checks": {
+      "type": "object",
+      "required": ["prose_not_substitute_for_methods", "citation_volume_not_substitute_for_analysis", "self_review_not_independence", "tests_not_scientific_validation", "internal_benchmarks_not_generality", "synthetic_not_empirical", "no_hidden_exclusions", "arxiv_not_peer_review", "doi_not_quality_validation", "citations_independently_verified"],
+      "properties": {
+        "prose_not_substitute_for_methods": {"type": "boolean"},
+        "citation_volume_not_substitute_for_analysis": {"type": "boolean"},
+        "self_review_not_independence": {"type": "boolean"},
+        "tests_not_scientific_validation": {"type": "boolean"},
+        "internal_benchmarks_not_generality": {"type": "boolean"},
+        "synthetic_not_empirical": {"type": "boolean"},
+        "no_hidden_exclusions": {"type": "boolean"},
+        "arxiv_not_peer_review": {"type": "boolean"},
+        "doi_not_quality_validation": {"type": "boolean"},
+        "citations_independently_verified": {"type": "boolean"}
+      }
+    },
+    "reviewer_independence": {
+      "type": "object",
+      "required": ["reviewer_not_author", "reviewer_not_originating_agent"],
+      "properties": {
+        "reviewer_not_author": {"type": "boolean"},
+        "reviewer_not_originating_agent": {"type": "boolean"},
+        "review_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "evaluated_at": {"type": "string", "format": "date-time"},
+    "evaluated_by": {"type": "string"}
+  },
+  "additionalProperties": false
+}
