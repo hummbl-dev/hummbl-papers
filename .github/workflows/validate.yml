@@ -18,7 +18,7 @@ on:
 jobs:
   validate:
     name: validate research portfolio
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64, wsl, hummbl-papers]
     strategy:
       fail-fast: false
       matrix:
@@ -44,7 +44,7 @@ jobs:
 
   validate-zenodo:
     name: validate .zenodo.json
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64, wsl, hummbl-papers]
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -66,7 +66,7 @@ jobs:
 
   validate-citation:
     name: validate CITATION.cff
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64, wsl, hummbl-papers]
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -84,7 +84,7 @@ jobs:
 
   release-artifacts:
     name: validate release artifacts
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64, wsl, hummbl-papers]
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
