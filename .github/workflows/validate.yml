@@ -17,6 +17,7 @@ on:
 
 jobs:
   validate:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     name: validate research portfolio
     runs-on: [self-hosted, Linux, X64, wsl, hummbl-papers]
     strategy:
