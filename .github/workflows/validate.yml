@@ -17,6 +17,9 @@ on:
 
 jobs:
   validate:
+    if: >-
+      github.event_name != 'pull_request' ||
+      github.event.pull_request.head.repo.full_name == github.repository
     name: validate research portfolio
     runs-on: [self-hosted, Linux, X64, wsl, hummbl-papers]
     strategy:
@@ -43,6 +46,9 @@ jobs:
         run: python tests/test_validate_repository.py
 
   validate-zenodo:
+    if: >-
+      github.event_name != 'pull_request' ||
+      github.event.pull_request.head.repo.full_name == github.repository
     name: validate .zenodo.json
     runs-on: [self-hosted, Linux, X64, wsl, hummbl-papers]
     steps:
@@ -65,6 +71,9 @@ jobs:
           .zenodo.json
 
   validate-citation:
+    if: >-
+      github.event_name != 'pull_request' ||
+      github.event.pull_request.head.repo.full_name == github.repository
     name: validate CITATION.cff
     runs-on: [self-hosted, Linux, X64, wsl, hummbl-papers]
     steps:
@@ -83,6 +92,9 @@ jobs:
         run: cffconvert --validate --infile CITATION.cff
 
   release-artifacts:
+    if: >-
+      github.event_name != 'pull_request' ||
+      github.event.pull_request.head.repo.full_name == github.repository
     name: validate release artifacts
     runs-on: [self-hosted, Linux, X64, wsl, hummbl-papers]
     steps:
